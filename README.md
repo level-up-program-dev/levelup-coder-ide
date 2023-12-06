@@ -17,10 +17,10 @@ This image is based on Ubuntu 23.10 (mantic)
 | Language Ecosystem | Version | Included Tools                            |
 | ------------------ | ------- | ----------------------------------------- |
 | Node               | 18.18.0 | nvm, npm                                  |
-| code-server        | 4.19.1  | _various vscode plugins (see Dockerfile)_ |
-| Python             | 3.11.5  | Poetry                                    |
+| Python             | 3.11.5  | Poetry, pipenv                            |
 | Java               | 20.0.2  |                                           |
 | Dotnet             | 6.0.122 | livingdoc                                 |
+| code-server        | 4.19.1  | _various vscode plugins (see Dockerfile)_ |
 
 # Build Instructions
 

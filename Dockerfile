@@ -57,17 +57,6 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | b
 	&& ln -s $(which node) /usr/bin/node \
 	&& ln -s $(which npm) /usr/bin/npm
 
-# Print versions
-RUN \
-	echo "Tool versions:" \
-	&& python --version \
-	&& pip --version \
-	&& poetry --version \
-	&& java -version \
-	&& dotnet --version \
-	&& node --version \
-	&& npm --version
-
 # Zshell Configuration
 RUN chsh -s $(which zsh)
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -140,6 +129,17 @@ RUN \
 	chmod +x /usr/bin/lvlup-git-setup \
 	&& chmod +x /usr/bin/lvlup-git-sync \
 	&& chmod +x /usr/bin/lvlup-git-reset
+
+# Print versions
+RUN \
+	echo "Tool versions:" \
+	&& python --version \
+	&& pip --version \
+	&& poetry --version \
+	&& java -version \
+	&& dotnet --version \
+	&& node --version \
+	&& npm --version
 
 # ports and volumes
 EXPOSE 9000 9001
