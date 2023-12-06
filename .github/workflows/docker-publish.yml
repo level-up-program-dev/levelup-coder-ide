@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Log into GitHub Container Registry
-        run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ env.CR_USERNAME }} --password-stdin
+        run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ vars.CR_USERNAME }} --password-stdin
 
       - name: Run tests
         if: always()
@@ -32,7 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Log into GitHub Container Registry
-        run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ env.CR_USERNAME }} --password-stdin
+        run: echo "${{ secrets.CR_PAT }}" | docker login https://ghcr.io -u ${{ vars.CR_USERNAME }} --password-stdin
 
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
